@@ -41,6 +41,12 @@
       <div>
         <input type="submit" id="submit">
       </div>
+      <br>
+      <div>
+        <text>Description: This page allows you to type a word through the input box and it will change the word to the proper format in the output box.</text>
+      </div>
+
+
 
     </form>
       <p><small>&copy; 2021-<span id="this-year"></span> by 
@@ -52,6 +58,14 @@
   </main>
   <script src="js/main.js"></script> 
   <script>
+    
+    function titleCase(str){
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+
+    }
+    
+    
     const mySubmit = document.querySelector("#submit");
     console.log(mySubmit);
 
@@ -59,8 +73,9 @@
       ev.preventDefault();
       const myInput = document.querySelector("#input");
       const myOutput = document.querySelector("#output");
-      myOutput.innerHTML = myInput.value;
-
+      let myString = myInput.value;
+      myString = titleCase(myString);
+      myOutput.innerHTML = myString;
       //alert(myInput.value);
     });
 
